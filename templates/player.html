@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  var channel = new goog.appengine.Channel('{{ token }}');
+  var socket = channel.open();
+  socket.onmessage = function(evt) {
+    alert(evt.data)
+  }
+});
+</script>
+
+{% endblock %}

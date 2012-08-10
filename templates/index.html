@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form id="frm" method="get">
+  <label for="p">Pairing Key</label>
+  <input type="text" name="p" id="p">
+  <br />
+  <input type="button" value="Remote Controller" id="controller">
+  <input type="button" value="Player" id="player">
+</form>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $("#controller").click(function() {
+    $("#frm").attr("action", "remotecontrol");
+    $("#frm").submit();
+  })
+  $("#player").click(function() {
+    $("#frm").attr("action", "player");
+    $("#frm").submit();
+  })
+});
+
+</script>
+{% endblock %}
